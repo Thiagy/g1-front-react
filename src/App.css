@@ -1,0 +1,335 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+header{
+    top: 0px;
+    position:fixed;
+    z-index: 5;
+    width: 100%;
+    padding:10px;
+    background-color: #C4170C;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+}
+
+main{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 100px;
+
+}
+footer{
+
+    background-color: #C4170C;
+    color: white;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+}
+.container1{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.container2{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cssmenu{
+    display: flex;
+    gap: 0.5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 17px;
+    cursor: pointer;
+}
+.itemMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.itensMenu{
+    background: white;
+    height: 2px;
+    width: 22px;
+}
+#menu-header{
+    position: fixed;
+    top: 0;
+    left: -290px;
+    height: 100vh;
+    width: 290px;
+    overflow-y: auto;
+    padding: 3vh;
+    background-color: white;
+    transition: left 1s ease;
+    z-index: 9;
+}
+.link_word_menu{
+    color: #666666; font-size: 20px; font-weight: 100; padding: 2vh 1vh; display: block;
+}
+/*css sobre post de notícias*/
+#post_new{
+
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,.45);
+    backdrop-filter: blur(5px);
+    
+}
+#box_insert_new{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 450px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid blue;
+
+}
+#box_title, #box_content{
+
+    width: 100%;
+
+}
+
+#title, #content{
+    background-color: transparent;
+    border: 1px solid blue;
+    border-radius: 3px;
+    width: 80%;
+    padding: 8px 5px;
+}
+
+#box_image{
+
+    position: relative;
+    width: 100px;
+    
+}
+
+#label_image{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 4px;
+    border: 1px solid blue;
+
+}
+#image{
+
+    top: 0;
+    position: absolute;
+    padding: 10px 0;
+    width: 100%;
+    opacity: 0;
+
+}
+#box_arraw_close{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.arrows_close{
+    height: 2px;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    background-color: white;
+}
+#arrow_1{
+    transform: rotate(45deg);
+}
+#arrow_2{
+    transform: rotate(-45deg);
+}
+
+#box_insert_new div textarea{
+    background-color: transparent;
+    border: 1px solid blue;
+    border-radius: 3px;
+    width: 80%;
+    padding: 8px 5px;
+}
+
+#btn_post_new{
+
+    height: 40px;
+    width: 80px;
+    border-radius: 4px;
+    border: 1px solid blue;
+    background-color: transparent;
+    transition: .5s;
+    cursor: pointer;
+}
+#btn_post_new:hover{
+
+    background-color: white;
+
+}
+#backdrop{
+    display: none;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0,.35);
+    backdrop-filter: blur(5px);
+    z-index: 8;
+    transition: 2s;
+}
+.menu-titulo{
+    width: 65%;
+}
+.search{
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: #A7140A;
+    font-weight: bolder;
+    color: white;
+    border: 1px solid transparent;
+}
+/*Imagem da lupa*/
+#lupa-header{
+    background-image: url("./components/imgs/favicon/lupa_header.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 5.2vh;
+    height: 5.2vh;
+    display: none;
+}
+.divSearch{
+    height: 18%;
+    width: 12%;
+    border-radius: 4px;
+    color: white;
+    transition: 1.4s ease;
+}
+.logo-g1{
+    font-weight: 100;
+    font-size: 2.4rem;
+}
+
+.propaganda--container-2{
+    display: none;
+    width: 80%;
+    margin: auto;
+}
+.propaganda--container-2 img{
+    width: 100%;
+    height: 100%;
+}
+.propaganda-container-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer-g1{
+    display: flex;
+    gap: 1vh;
+}
+.div-autor{
+    display: flex;
+    justify-content: space-between;
+}
+.div-autor > ul{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+.podcast{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4vh;
+}
+@media (max-width: 1200px){
+    
+    .container{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .container1, .container2{
+        margin: auto;
+        width: 90%;
+    }
+}
+@media (max-width: 768px){
+    #lupa-header{
+        display: block;
+    }
+   #box_marketing{
+    width: 90%;
+   }
+   #csshighlight{
+    width: 100%;
+   }
+    .search{
+        display: none;
+    }
+    
+    
+   
+}
+@media (max-width: 425px){
+    
+    .container1, .container2{
+        width: 97%;
+    }
+   
+}
+
+@media (max-width: 290px){
+    #menu-header{
+        width: 260px;
+    }
+
+}
+
+
