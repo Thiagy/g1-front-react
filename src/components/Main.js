@@ -31,6 +31,9 @@ export default function Main(){
         <Marketing/>
         <Highlight/>
         <Marketing/>
+        <div id="spinner">
+          <img src="./imgs/spinner" alt=""/>
+        </div>
         <div className="container">
             <div className="container1">
                 {news.map((item, index) => (
