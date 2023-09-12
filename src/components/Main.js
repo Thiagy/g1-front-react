@@ -1,29 +1,37 @@
 import React, { useEffect, useState } from "react";
-import Marketing from './Marketing';
+import Marketing from './Marketing'
 import Highlight from "./Highlight";
 import BoxNew from "./BoxNew";
 import New from './New';
 import { getNews } from "./functions/newApi";
 
-export default function Main() {
+export default function Main(){
+
   const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(true);
+
+  async function fetchNews() {
+
+    const main = document.querySelector('main')
+    const footer = document.querySelector('footer')
+
+    const newsData = await getNews();
+
+
+    if(newsData){
+        
+        spinner.style.display='none'
+        main.style.display='flex'
+        footer.style.display='flex'
+       
+    }
+    setNews(newsData);
+  }
 
   useEffect(() => {
-    async function fetchNews() {
-      try {
-        const newsData = await getNews();
-        setNews(newsData);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching news:", error);
-        setLoading(false);
-      }
-    }
-
     fetchNews();
-  }, []);
+  }, []); 
 
+  // Crie uma nova variável para conter os 10 primeiros elementos de 'news'
   const news_1 = news.slice(0, 5);
   const news_2 = news.slice(6, 11);
   const news_3 = news.slice(12, 17);
@@ -33,33 +41,30 @@ export default function Main() {
 
   return (
     <main>
-      <Marketing />
-      <Highlight />
-      <Marketing />
-      {loading ? (
-        <div id="spinner">Loading...</div>
-      ) : (
+        <Marketing/>
+        <Highlight/>
+        <Marketing/>
+        <div id="spinner" style={{display: newsData? 'none': 'block'}}></div>
         <div className="container">
-          <div className="container1">
-            {news.map((item, index) => (
-              <New
-                key={index}
-                title={item.title}
-                content={item.content}
-                image={item.image}
-              />
-            ))}
-          </div>
-          <div className="container2">
-            <BoxNew newarray={news_1} />
-            <BoxNew newarray={news_2} />
-            <BoxNew newarray={news_3} />
-            <BoxNew newarray={news_4} />
-            <BoxNew newarray={news_5} />
-            <BoxNew newarray={news_6} />
-          </div>
-        </div>
-      )}
+            <div className="container1">
+                {news.map((item, index) => (
+                  <New
+                    key={index} 
+                    title={item.title}
+                    content={item.content}
+                    image={item.image}
+                  />
+                ))}
+            </div>
+            <div className="container2">
+              <BoxNew newarray={news_1} />
+              <BoxNew newarray={news_2} />
+              <BoxNew newarray={news_3} />
+              <BoxNew newarray={news_4} />
+              <BoxNew newarray={news_5} />
+              <BoxNew newarray={news_6} />
+            </div>  
+        </div>     
     </main>
   );
 }
