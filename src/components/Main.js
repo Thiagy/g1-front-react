@@ -19,7 +19,6 @@ export default function Main(){
 
     if(newsData){
         
-        spinner.style.display='none'
         main.style.display='flex'
         footer.style.display='flex'
        
