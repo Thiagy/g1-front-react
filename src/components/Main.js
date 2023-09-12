@@ -32,7 +32,7 @@ export default function Main(){
         <Highlight/>
         <Marketing/>
         <div id="spinner">
-          <img src="components/imgs/spinner.gif" alt=""/>
+          <img src="imgs/spinner.gif" alt=""/>
         </div>
         <div className="container">
             <div className="container1">
