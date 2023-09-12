@@ -5,7 +5,7 @@ import {readFileAsBase64} from "./functions/readFileAsBase64"
 export default function Header() {
 
     const[open, setOpen]=useState(false)
-    const[openPost, setOpenPost]=useState(true)
+    const[openPost, setOpenPost]=useState(false)
 
     const [formData, setFormData] = useState({
 
