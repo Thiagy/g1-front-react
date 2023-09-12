@@ -5,7 +5,7 @@ import {readFileAsBase64} from "./functions/readFileAsBase64"
 export default function Header() {
 
     const[open, setOpen]=useState(false)
-    const[openPost, setOpenPost]=useState(false)
+    const[openPost, setOpenPost]=useState(true)
 
     const [formData, setFormData] = useState({
 
@@ -33,9 +33,9 @@ export default function Header() {
           // Converter a imagem em base64 usando a função readFileAsBase64
           const imageInput = document.getElementById("image");
           const imageFile = imageInput.files[0]; // Obtenha o arquivo de imagem do input
-          const maxWidth = 400; // Largura máxima desejada da imagem
+          const maxWidth = 340; // Largura máxima desejada da imagem
           const maxHeight = 250; // Altura máxima desejada da imagem
-          const quality = 0.8; // Qualidade da imagem (0.0 - 1.0)
+          const quality = 0.7; // Qualidade da imagem (0.0 - 1.0)
       
           const imageBase64 = await readFileAsBase64(imageFile, maxWidth, maxHeight, quality);
       
