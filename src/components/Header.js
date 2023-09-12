@@ -34,7 +34,7 @@ export default function Header() {
           const imageInput = document.getElementById("image");
           const imageFile = imageInput.files[0]; // Obtenha o arquivo de imagem do input
           const maxWidth = 340; // Largura máxima desejada da imagem
-          const maxHeight = 250; // Altura máxima desejada da imagem
+          const maxHeight = 200; // Altura máxima desejada da imagem
           const quality = 0.7; // Qualidade da imagem (0.0 - 1.0)
       
           const imageBase64 = await readFileAsBase64(imageFile, maxWidth, maxHeight, quality);
