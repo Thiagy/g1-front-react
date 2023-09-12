@@ -27,6 +27,8 @@ header{
     width: 50px;
     border-radius: 50%;
     background-image: url('components/imgs/spinner.gif');
+    background-position: center;
+    background-size: contain;
 }
 
 #spinner img{
