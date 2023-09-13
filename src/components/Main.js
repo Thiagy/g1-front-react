@@ -8,20 +8,17 @@ import { getNews } from "./functions/newApi";
 export default function Main(){
 
   const [news, setNews] = useState([]);
+  const [index_news, setIndexNews] = useState(0); // Use o estado para armazenar o índice
 
   async function fetchNews() {
-
-    const main = document.querySelector('main')
+    
     const footer = document.querySelector('footer')
 
     const newsData = await getNews();
 
-
-    if(newsData){
-        
-        main.style.display='flex'
-        footer.style.display='flex'
+    if (newsData) {
        
+        footer.style.display='flex'
     }
     setNews(newsData);
   }
@@ -30,20 +27,38 @@ export default function Main(){
     fetchNews();
   }, []); 
 
-  // Crie uma nova variável para conter os 10 primeiros elementos de 'news'
-  const news_1 = news.slice(0, 5);
-  const news_2 = news.slice(6, 11);
-  const news_3 = news.slice(12, 17);
-  const news_4 = news.slice(18, 23);
-  const news_5 = news.slice(24, 29);
-  const news_6 = news.slice(30, 35);
+  // Atualize o índice dentro de setInterval usando o estado
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (index_news + 17 < news.length) {
+        setIndexNews(index_news + 6);
+      } else {
+        setIndexNews(0);
+      }
+    }, 5000); // Intervalo de 5 segundos (ou outro valor desejado)
+
+    return () => clearInterval(interval); // Limpar o intervalo ao desmontar o componente
+  }, [index_news, news]);
+
+  // Divida as notícias em grupos de 5
+  const news_1 = news.slice(index_news, index_news + 5);
+  const news_2 = news.slice(index_news + 6, index_news + 11);
+  const news_3 = news.slice(index_news + 12, index_news + 17);
 
   return (
-    <main>
+    <>
+    <div id="spinner" style={{display: news.length ? 'none' : 'block'}}></div>
+    <main style={{display: news.length ? 'flex' : 'none'}}>
         <Marketing/>
-        <Highlight/>
+        {news.length > 0 && (
+        <Highlight
+          news_1={news_1}
+          news_2={news_2}
+          news_3={news_3}
+        />
+      )}
         <Marketing/>
-        <div id="spinner" style={{display: newsData? 'none': 'block'}}></div>
+        
         <div className="container">
             <div className="container1">
                 {news.map((item, index) => (
@@ -56,14 +71,12 @@ export default function Main(){
                 ))}
             </div>
             <div className="container2">
-              <BoxNew newarray={news_1} />
-              <BoxNew newarray={news_2} />
-              <BoxNew newarray={news_3} />
-              <BoxNew newarray={news_4} />
-              <BoxNew newarray={news_5} />
-              <BoxNew newarray={news_6} />
+              <BoxNew newarray={news_1} title='Você viu isso?'/>
+              <BoxNew newarray={news_2}  title='Blogs e colunas'/>
+              <BoxNew newarray={news_3} title='Mais lidas'/>
             </div>  
         </div>     
     </main>
+    </>
   );
 }

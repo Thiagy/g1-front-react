@@ -19,18 +19,19 @@ header{
     align-items: center;
 }
 #spinner{
+
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     background-image: url('components/imgs/spinner.gif');
     background-position: center;
-    background-size: contain;
+    background-size: cover;
+    
 }
-
 
 main{
 
@@ -43,13 +44,13 @@ main{
 }
 footer{
 
+    display: none;
+    flex-direction: column;
+    gap: 20px;
     background-color: #C4170C;
     color: white;
     padding: 20px;
     color: white;
-    display: none;
-    flex-direction: column;
-    gap: 20px;
 
 }
 .container{

@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react";
 import New2 from './New2'
 
-export default function BoxNew({newarray}){
-
+export default function BoxNew({newarray, title}){
 
     const box_new = {
 
@@ -26,7 +25,7 @@ export default function BoxNew({newarray}){
 
         <div style={box_new}>
 
-            <h3 style={{position: 'absolute', left: '30px', top:'20px'}}>Você viu isso?</h3>
+            <h3 style={{position: 'absolute', left: '30px', top:'20px'}}>{title}</h3>
             <hr/> 
 
             {news.map((item, index) => (
