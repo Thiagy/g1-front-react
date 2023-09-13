@@ -6,7 +6,7 @@ export default function New2({content, image}) {
 
     const new_sec_image = {
         height: '100%',
-        with: '100%',
+        width: '100%',
         borderRadius: '8px'
 
     }
@@ -40,7 +40,7 @@ export default function New2({content, image}) {
 
     const div_new_sec_image = {
 
-        height: '60px',
+        height: changes ? "auto":'30%',
         width: changes ? "100%":'30%',
         borderRadius: '8px'
 
@@ -66,6 +66,7 @@ export default function New2({content, image}) {
             <a style={div_new_sec_image} href="#" target="_blank">
                 <img style={new_sec_image} src={image} alt={content}/>
             </a>
+            
         </div>
         <hr style={{width: changes ? "100%":'90%',}}/>
 

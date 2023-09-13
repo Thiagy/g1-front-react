@@ -60,6 +60,7 @@ export default function Main() {
         {/*Componente que exibe os anúncios*/}
         <Marketing/>
         <div className="container">
+
           {/*Componente que exibe os lista de notícias*/}
           <div className="container1">
             {news.slice(0, visibleNewsCount).map((item, index) => (
@@ -68,13 +69,15 @@ export default function Main() {
             {visibleNewsCount < news.length && (
               <div id="btn_show_more" onClick={loadMoreNews}>Veja mais</div>
             )}
+
           </div>
           <div className="container2">
-          {/*Componentes que exibe os lista de notícias secundárias*/}
 
+            {/*Componentes que exibe os lista de notícias secundárias*/}
             <BoxNew newarray={news.slice(index_news, index_news + 5)} title='Você viu isso?'/>
             <BoxNew newarray={news.slice(index_news + 6, index_news + 11)} title='Blogs e colunas'/>
             <BoxNew newarray={news.slice(index_news + 12, index_news + 17)} title='Mais lidas'/>
+            
           </div>  
         </div>     
       </main>
