@@ -58,7 +58,7 @@ export default function Highlight({ news_1, news_2, news_3 }) {
 
   const csshighlight = {
     /*Div de notícias de destaque*/
-    height: isSmallScreen ? "50vh" : "95vh",
+    height: isSmallScreen ? "50vh" : "100vh",
     width: isSmallScreen ? "100%" : "95%", // Altera a largura para 100% se a tela for pequena
     position: "relative",
   };
