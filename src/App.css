@@ -54,7 +54,6 @@ footer{
 
 }
 
-
 #btn_show_more{
 
     background-color: #C4170C;
@@ -118,7 +117,11 @@ footer{
     z-index: 9;
 }
 .link_word_menu{
-    color: #666666; font-size: 20px; font-weight: 100; padding: 2vh 1vh; display: block;
+    color: #666666; 
+    font-size: 20px; 
+    font-weight: 100; 
+    padding: 2vh 1vh; 
+    display: block;
 }
 /*css sobre post de notícias*/
 #post_new{
@@ -277,20 +280,6 @@ footer{
     font-size: 2.4rem;
 }
 
-.propaganda--container-2{
-    display: none;
-    width: 80%;
-    margin: auto;
-}
-.propaganda--container-2 img{
-    width: 100%;
-    height: 100%;
-}
-.propaganda-container-1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 a{
     text-decoration: none;
