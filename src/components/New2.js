@@ -40,7 +40,7 @@ export default function New2({content, image}) {
 
     const div_new_sec_image = {
 
-        height: changes ? "auto":'60px',
+        height: changes ? "auto":'70px',
         width: changes ? "100%":'30%',
         borderRadius: '8px'
 
